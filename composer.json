@@ -1,0 +1,21 @@
+{
+    "name": "vratiu/sendy-api",
+    "description": "",
+    "authors": [
+        {
+            "name": "Virgil Ratiu",
+            "email": "vratiu@yahoo.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "guzzlehttp/guzzle" : "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Vratiu\\SendyApi": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
