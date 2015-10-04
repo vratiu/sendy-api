@@ -1,15 +1,15 @@
 <?php
 namespace Vratiu\SendyApi\Result;
 
-use GuzzleHttp\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 interface ResultInterface
 {
     /**
      * Parse response
-     * @param \GuzzleHttp\Message\ResponseInterface $response
+     * @param Response $response
      */
-    function __construct(ResponseInterface $response);
+    function __construct(Response $response);
     
     /**
      * Is it an error

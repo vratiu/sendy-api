@@ -48,22 +48,21 @@ class SendyApi
      * @param string $action
      * @param array $params
      * @param string $method
-     * @return \GuzzleHttp\Message\ResponseInterface
+     * @return \GuzzleHttp\Psr7\Response
      * @throws Exception
      */
     public function makeRequest($action, array $params, $method = 'POST')
     {
         $options = ($method == 'GET')? array('query' => $params)
-                                    : array('body' => $params);
+                                    : array('form_params' => $params);
         
         $client = $this->getClient();
-        $request = $client->createRequest(
+        $response = $client->request(
                                 $method,
                                 $this->getActionUrl($action),
                                 $options
                             );
-        $response = $client->send($request);
-        
+
         if($response->getStatusCode() >= 400){
             throw new Exception('Request error', $response->getStatusCode());
         }

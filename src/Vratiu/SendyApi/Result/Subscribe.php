@@ -1,7 +1,7 @@
 <?php
 namespace Vratiu\SendyApi\Result;
 
-use GuzzleHttp\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 class Subscribe extends ResultAbstract
 {
@@ -17,7 +17,7 @@ class Subscribe extends ResultAbstract
         self::ERROR_ALREADY_SUBSCRIBED
     );
     
-    public function __construct(ResponseInterface $response)
+    public function __construct(Response $response)
     {
         $responseString = $response->getBody()->__toString();
         if($responseString === 'true' || $responseString == '1'){

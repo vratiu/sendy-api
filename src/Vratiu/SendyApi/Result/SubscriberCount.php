@@ -1,7 +1,7 @@
 <?php
 namespace Vratiu\SendyApi\Result;
 
-use GuzzleHttp\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 class SubscriberCount extends ResultAbstract
 {
@@ -19,7 +19,7 @@ class SubscriberCount extends ResultAbstract
     );
     
     
-    public function __construct(ResponseInterface $response)
+    public function __construct(Response $response)
     {
         $responseString = $response->getBody()->__toString();
         if(is_numeric($responseString)){

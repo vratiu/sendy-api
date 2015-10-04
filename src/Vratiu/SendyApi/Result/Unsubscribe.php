@@ -1,7 +1,7 @@
 <?php
 namespace Vratiu\SendyApi\Result;
 
-use GuzzleHttp\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 class Unsubscribe extends ResultAbstract
 {
@@ -14,7 +14,7 @@ class Unsubscribe extends ResultAbstract
         self::ERROR_INVALID_EMAIL
     );
     
-    public function __construct(ResponseInterface $response)
+    public function __construct(Response $response)
     {
         $responseString = $response->getBody()->__toString();
         if($responseString === 'true' || $responseString == '1'){

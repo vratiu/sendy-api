@@ -1,7 +1,7 @@
 <?php
 namespace Vratiu\SendyApi\Result;
 
-use GuzzleHttp\Message\ResponseInterface;
+use GuzzleHttp\Psr7\Response;
 
 abstract
 class ResultAbstract implements ResultInterface
@@ -19,7 +19,7 @@ class ResultAbstract implements ResultInterface
     
     protected $result;
     
-    abstract public function __construct(ResponseInterface $response);
+    abstract public function __construct(Response $response);
     
     /**
      * Parses the error
